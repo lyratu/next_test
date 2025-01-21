@@ -4,10 +4,11 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { protocol, hostname, origin } = window.location;
-  const baseUrl = origin;
   const [url, setUrl] = useState("");
+
   useEffect(() => {
+    const { protocol, hostname, origin } = window.location;
+    const baseUrl = origin;
     fetch(`${baseUrl}/api/getStun`)
       .then((res) => res.json())
       .then((res) => {
