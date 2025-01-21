@@ -7,12 +7,12 @@ export default function Home() {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    const { protocol, hostname, origin } = window.location;
+    const { hostname, origin } = window.location;
     const baseUrl = origin;
     fetch(`${baseUrl}/api/getStun`)
       .then((res) => res.json())
       .then((res) => {
-        setUrl(`${protocol}//${hostname}:${res.port}`);
+        setUrl(`${hostname}:${res.port}`);
       });
   }, [url]);
 
