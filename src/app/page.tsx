@@ -12,7 +12,7 @@ export default function Home() {
     fetch(`${baseUrl}/api/getStun`)
       .then((res) => res.json())
       .then((res) => {
-        setUrl(`http://${hostname}:${res.port}`);
+        setUrl(`http://luck.${hostname}:${res.port}`);
       });
   }, [url]);
 
