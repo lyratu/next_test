@@ -4,17 +4,12 @@
 
 /* 在你的 CSS 文件中添加或更新以下样式 */
 .card-panel {
+  position: relative;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  padding: 20px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(15px); /* 添加前缀以支持 Safari */
   backdrop-filter: blur(15px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 20px;
   transition: transform 0.3s, box-shadow 0.3s; /* 添加过渡效果 */
 }
 
@@ -25,7 +20,6 @@
 
 .card-title {
   font-size: 1.8rem; /* 增加标题字体大小 */
-  margin-bottom: 10px; /* 标题与状态指示灯之间的间距 */
   color: #333; /* 标题颜色 */
 }
 
@@ -35,13 +29,12 @@
   font-size: 1rem; /* 描述内容字体大小 */
 }
 
-.status-indicator {
-  margin-bottom: 10px;
-}
-
 .light {
-  width: 20px;
-  height: 20px;
+  right: 1rem;
+  top: 1rem;
+  position: absolute;
+  height: 0.75rem;
+  width: 0.75rem;
   border-radius: 50%;
   background-color: red; /* 默认红灯 */
   transition: background-color 0.3s; /* 添加过渡效果 */
@@ -57,6 +50,7 @@
   font-weight: bold;
   font-size: 1.2rem; /* 增加链接字体大小 */
   transition: color 0.3s; /* 添加过渡效果 */
+  overflow-wrap: anywhere;
 }
 
 .link:hover {

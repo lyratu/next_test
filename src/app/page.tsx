@@ -17,13 +17,14 @@ export default function Home() {
   }, [url]);
 
   return (
-    <div className=" grid grid-cols-4">
-      <div className="card-panel">
-        <h2 className="card-title">lucky panel</h2>
-        <div className="status-indicator">
+    <div className=" grid lg:grid-cols-4 sm:grid-cols-2 p-2">
+      <div className="card-panel px-6 py-4">
+        <h2 className="card-title flex items-center">
+          <span>lucky panel</span>
           <div className={`light ${url ? 'green' : 'red'}`}></div>
-        </div>
-        <a href={url} className="link">点击访问{url}</a>
+        </h2>
+
+        <a href={url} className="link">{url}</a>
       </div>
 
     </div>
